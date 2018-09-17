@@ -22,6 +22,12 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# Configures Guardian
+config :instasham, InstashamWeb.Auth.Guardian,
+       issuer: "instasham",
+       verify_issuer: true,
+       secret_key: System.get_env("GUARDIAN_SECRET_KEY")
+
 # Configure Facebook Graph API Wrapper
 config :facebook,
   app_id: nil,
