@@ -22,6 +22,14 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
+# Configure Facebook Graph API Wrapper
+config :facebook,
+  app_id: nil,
+  app_secret: nil,
+  app_access_token: nil,
+  graph_url: "https://graph.facebook.com",
+  graph_video_url: "https://graph-video.facebook.com"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env}.exs"
